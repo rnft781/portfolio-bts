@@ -6,37 +6,19 @@ import Hero from './sections/Hero'
 import About from './sections/About'
 import Timeline from './sections/Timeline'
 import Skills from './sections/Skills'
-import Stack from './sections/Stack'
-import RecentTech from './sections/RecentTech'
-import Methods from './sections/Methods'
-import Values from './sections/Values'
-import Capabilities from './sections/Capabilities'
-import ToolsFav from './sections/ToolsFav'
 import Certifications from './sections/Certifications'
-import Experience from './sections/Experience'
-import BeforeAfter from './sections/BeforeAfter'
 import Projects from './sections/Projects'
-import Realizations from './sections/Realizations'
-import Services from './sections/Services'
-import Synthesis from './sections/Synthesis'
-import Downloads from './sections/Downloads'
-import CvSection from './sections/CvSection'
-import Notes from './sections/Notes'
-
-import AboutSite from './sections/AboutSite'
-import Objectives from './sections/Objectives'
-import QuickContact from './sections/QuickContact'
 import Contact from './sections/Contact'
 
 function App() {
   const navLinks = useMemo(
     () => [
-      { label: 'Accueil', href: '#hero' },
-      { label: 'À propos', href: '#about' },
-      { label: 'Parcours', href: '#timeline' },
-      { label: 'Compétences', href: '#skills' },
-      { label: 'Projets', href: '#projects' },
-      { label: 'E5', href: '#realizations' },
+      { label: 'Page d\'accueil', href: '#hero' },
+      { label: 'Mon Parcours', href: '#timeline' },
+      { label: 'Certification', href: '#certifications' },
+      { label: 'CV', href: '#cv-section' },
+      { label: 'Compétence', href: '#skills' },
+      { label: 'E4', href: '#projects' }, // E4 souvent Stages/Projets. Ici lié aux Réalisations.
       { label: 'Contact', href: '#contact' },
     ],
     [],
@@ -53,25 +35,7 @@ function App() {
         <Timeline />
         <Certifications />
         <Skills />
-        <Stack />
-        <RecentTech />
-        <Methods />
-        <Values />
-        <Capabilities />
-        <ToolsFav />
-        <Experience />
-        <BeforeAfter />
         <Projects />
-        <Realizations />
-        <Services />
-        <Synthesis />
-        <Downloads />
-        <CvSection />
-        <Notes />
-
-        <AboutSite />
-        <Objectives />
-        <QuickContact />
         <Contact />
       </main>
 

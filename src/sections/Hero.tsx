@@ -1,60 +1,56 @@
-import { useEffect, useState } from 'react'
-import { ArrowRight, Mail, Phone } from 'lucide-react'
-
-const phrases = ['Développeur web BTS SIO', 'Étudiant SLAM – promo 2025', 'Créateur de services 100 % locaux']
+import { Mail } from 'lucide-react'
 
 const Hero = () => {
-  const [currentPhrase, setCurrentPhrase] = useState(0)
-
-  useEffect(() => {
-    const interval = window.setInterval(() => {
-      setCurrentPhrase((prev) => (prev + 1) % phrases.length)
-    }, 2800)
-    return () => window.clearInterval(interval)
-  }, [])
 
   return (
-    <section id="hero" className="mb-20 scroll-mt-28">
-      <div className="rounded-3xl border border-white/60 bg-white/80 p-8 shadow-soft dark:border-slate-800 dark:bg-slate-900/70 sm:p-12">
-        <p className="mb-4 inline-flex items-center rounded-full border border-slate-200 px-4 py-1 text-xs font-semibold uppercase tracking-wide text-slate-500 dark:border-slate-700 dark:text-slate-300">
-          BTS SIO · Spécialité SLAM · Promo 2025
-        </p>
+    <section id="hero" className="mb-16 scroll-mt-28">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Carte principale (Intro) */}
+        <div className="flex flex-col justify-center rounded-3xl bg-white p-8 shadow-sm transition-shadow hover:shadow-md dark:bg-slate-900 lg:col-span-2">
+          <h1 className="font-display text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl">
+            Aurélien Frélaut
+          </h1>
+          <p className="mt-2 text-xl font-medium text-slate-500 dark:text-slate-400">
+            Développeur Web & SLAM
+          </p>
+          <p className="mt-6 max-w-lg text-slate-600 dark:text-slate-300">
+            J'aide les entreprises à concevoir des outils numériques performants.
+            En route vers le diplôme BTS SIO 2025.
+          </p>
 
-        <h1 className="font-display text-4xl font-semibold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl">
-          Portfolio professionnel d&apos;Aurélien Frélaut
-        </h1>
-        <p className="mt-3 text-sm font-semibold uppercase tracking-[0.3em] text-primary" aria-live="polite">
-          {phrases[currentPhrase]}
-        </p>
-        <p className="mt-6 text-lg text-slate-600 dark:text-slate-300">
-          Étudiant passionné par le développement applicatif et la mise à disposition de services numériques.
-          Ce portfolio présente les réalisations, compétences et expériences alignées avec les attendus de l&apos;épreuve E5.
-        </p>
-
-        <div className="mt-8 flex flex-wrap gap-4">
-          <a
-            href="#projects"
-            className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:-translate-y-0.5"
-          >
-            Voir les projets E5 <ArrowRight size={16} />
-          </a>
-          <a
-            href="mailto:afrelaut.ledantec@gmail.com"
-            className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-primary hover:text-primary dark:border-slate-700 dark:text-slate-100"
-          >
-            Contact direct
-          </a>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <a
+              href="#projects"
+              className="inline-flex items-center gap-2 rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100"
+            >
+              Voir mes projets
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 rounded-xl bg-slate-100 px-5 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-200 dark:bg-slate-800 dark:text-white dark:hover:bg-slate-700"
+            >
+              Me contacter
+            </a>
+          </div>
         </div>
 
-        <div className="mt-8 grid gap-4 text-sm text-slate-600 dark:text-slate-300 sm:grid-cols-2">
-          <div className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white/80 px-4 py-3 dark:border-slate-700 dark:bg-slate-900/80">
-            <Mail size={18} className="text-primary" />
-            afrelaut.ledantec@gmail.com
+        {/* Carte Contact Rapide (Right Stack) */}
+        <div className="flex flex-col gap-6">
+          <div className="flex flex-1 flex-col justify-center rounded-3xl bg-white p-8 shadow-sm transition-shadow hover:shadow-md dark:bg-slate-900">
+            <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400">
+              <Mail size={20} />
+            </div>
+            <p className="text-xs font-semibold uppercase text-slate-500">Email</p>
+            <a href="mailto:afrelaut.ledantec@gmail.com" className="mt-1 font-medium text-slate-900 hover:underline dark:text-white">
+              afrelaut.ledantec@gmail.com
+            </a>
           </div>
-          <div className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white/80 px-4 py-3 dark:border-slate-700 dark:bg-slate-900/80">
-            <Phone size={18} className="text-primary" />
-            06 98 32 65 37
-          </div>
+        </div>
+
+        {/* Carte Localisation (Full Width Bottom) */}
+        <div className="flex flex-col justify-center rounded-3xl bg-white p-8 shadow-sm transition-shadow hover:shadow-md dark:bg-slate-900 lg:col-span-3">
+          <h3 className="font-semibold text-slate-900 dark:text-white">Basé en Île-de-France</h3>
+          <p className="mt-1 text-sm text-slate-500">Montigny-le-Bretonneux (78) · Mobile à Paris & alentours</p>
         </div>
       </div>
     </section>

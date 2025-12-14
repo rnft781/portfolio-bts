@@ -5,7 +5,11 @@ const defaultOptions: IntersectionObserverInit = {
   rootMargin: '0px 0px -50px 0px',
 }
 
+// Hook personnalisé pour gérer l'animation d'apparition au défilement
+// Utilise l'API native du navigateur "Intersection Observer"
+// pour détecter quand un élément entre dans la fenêtre visible (viewport).
 const useScrollReveal = <T extends HTMLElement>(options?: IntersectionObserverInit) => {
+  // Référence à l'élément DOM qu'on souhaite animer
   const elementRef = useRef<T>(null)
 
   useEffect(() => {

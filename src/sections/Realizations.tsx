@@ -1,8 +1,11 @@
+// Données des réalisations (Projets E5)
+// Cette structure simule une base de données ou une API JSON.
+// Idéal pour montrer la séparation entre les données (Model) et la vue (View).
 const realizations = [
   {
     title: 'Site vitrine Leano Design',
     mission: 'Stage 2025 – refonte intégrale du site client',
-    slam: ['SLAM1', 'SLAM2', 'SLAM4', 'SLAM5'],
+    slam: ['SLAM1', 'SLAM2', 'SLAM4', 'SLAM5'], // Compétences du référentiel
     description:
       'Création d’un site vitrine responsive avec animation légère, optimisation du parcours et documentation remise au client.',
     tech: ['Vite', 'TailwindCSS', 'JavaScript', 'GitHub'],
@@ -34,6 +37,7 @@ const realizations = [
   },
 ]
 
+// Composant d'affichage des réalisations
 const Realizations = () => (
   <section id="realizations" className="mb-20 scroll-mt-28">
     <div className="rounded-3xl border border-white/60 bg-white/80 p-8 shadow-soft dark:border-slate-800 dark:bg-slate-900/70">

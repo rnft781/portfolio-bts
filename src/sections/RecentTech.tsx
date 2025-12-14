@@ -1,13 +1,14 @@
 import useScrollReveal from '../hooks/useScrollReveal'
 
 const recentTechnologies = [
-  { name: 'React', emoji: '⚛️', focus: 'Front moderne', weeks: '4 sem.' },
-  { name: 'Tailwind', emoji: '🎨', focus: 'Design system', weeks: '6 sem.' },
-  { name: 'PHP', emoji: '🐘', focus: 'Back SLAM', weeks: '8 sem.' },
-  { name: 'JavaScript', emoji: '📜', focus: 'Interaction UI', weeks: 'Continu' },
-  { name: 'Git', emoji: '🔀', focus: 'Versioning', weeks: 'Continu' },
-  { name: 'Bootstrap', emoji: '🎯', focus: 'Projets express', weeks: '3 sem.' },
-  { name: 'SQL', emoji: '🗄️', focus: 'Mini plateforme', weeks: '5 sem.' },
+  { name: 'HTML / CSS', icon: '🎨', focus: 'Intégration Web', weeks: 'Continu' },
+  { name: 'PHP', icon: '🐘', focus: 'Développement Back-end', weeks: '8 sem.' },
+  { name: 'SQL / MySQL', icon: '🗄️', focus: 'Base de données', weeks: '5 sem.' },
+  { name: 'JavaScript', icon: '📜', focus: 'Dynamisme Front', weeks: 'Continu' },
+  { name: 'Git / GitHub', icon: '🔀', focus: 'Versioning & CI/CD', weeks: 'Continu' },
+  { name: 'Bootstrap', icon: '🎯', focus: 'CSS Framework', weeks: '3 sem.' },
+  { name: 'Symfony', icon: '🚀', focus: 'Framework PHP', weeks: 'En cours' },
+  { name: 'WordPress', icon: '📝', focus: 'CMS', weeks: '2 sem.' },
 ]
 
 const RecentTech = () => {
@@ -27,7 +28,9 @@ const RecentTech = () => {
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {recentTechnologies.map((tech) => (
             <div key={tech.name} className="rounded-2xl border border-slate-200 bg-white/90 p-5 dark:border-slate-800 dark:bg-slate-900/80">
-              <div className="mb-2 text-2xl">{tech.emoji}</div>
+              <div className="mb-2 text-2xl" role="img" aria-label={tech.name}>
+                {tech.icon}
+              </div>
               <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-300">{tech.focus}</p>
               <h3 className="text-lg font-semibold text-slate-900 dark:text-white">{tech.name}</h3>
               <p className="text-xs text-slate-500 dark:text-slate-400">Pratique : {tech.weeks}</p>

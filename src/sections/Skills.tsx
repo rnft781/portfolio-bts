@@ -1,15 +1,15 @@
 const skillGroups = [
   {
-    title: 'Langages & frameworks',
-    items: ['HTML', 'CSS', 'JavaScript', 'PHP', 'C#', 'TailwindCSS'],
+    title: 'Développement Back-end & BDD',
+    items: ['PHP 8', 'MySQL / MariaDB', 'Symfony (Bases)', 'Modélisation MCD/MLD'],
   },
   {
-    title: 'Outils & environnements',
-    items: ['VS Code', 'Visual Studio', 'GitHub', 'Trello', 'Vite', 'Bootstrap'],
+    title: 'Développement Front-end',
+    items: ['HTML5 / CSS3', 'JavaScript ES6+', 'Bootstrap', 'Responsive Design'],
   },
   {
-    title: 'Méthodes & pratiques',
-    items: ['Agile', 'POO', 'CMS', 'Référencement', 'Tests unitaires', 'Support utilisateurs'],
+    title: 'Outils & Environnement',
+    items: ['Git / GitHub', 'VS Code', 'Wamp / XAMPP', 'Trello (Méthode Agile)'],
   },
 ]
 

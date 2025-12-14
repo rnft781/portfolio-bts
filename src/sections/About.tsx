@@ -9,11 +9,11 @@ const About = () => (
         <p className="mt-4 text-slate-600 dark:text-slate-300">
           Étudiant en BTS SIO option SLAM au lycée Louis-Blériot, je construis des solutions web locales et sécurisées
           prêtes à être déployées dans un contexte professionnel. Mon objectif est d&apos;apporter un support fiable aux
-  utilisateurs tout en amélioration continue des services.
+          utilisateurs tout en amélioration continue des services.
         </p>
         <p className="mt-4 text-slate-600 dark:text-slate-300">
-          Ce portfolio s&apos;appuie sur le document B1-Act4 – Le Portfolio et répond point par point aux attendus de l&apos;épreuve
-          E5 (présentation du parcours, des réalisations professionnelles, compétences et missions de stage).
+          Passionné par le développement, j'ai acquis une solide expérience à travers mes stages et projets personnels.
+          Je souhaite aujourd'hui mettre mes compétences techniques en PHP, SQL et JavaScript au service d'une entreprise innovante.
         </p>
       </div>
 

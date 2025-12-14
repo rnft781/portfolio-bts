@@ -3,14 +3,20 @@ import type { FormEvent } from 'react'
 import { Clock, Mail, MapPin, Phone } from 'lucide-react'
 
 const Contact = () => {
+  // Gestion de l'état du formulaire (machine à états simple)
+  // 'idle' = en attente, 'sending' = envoi en cours, 'sent' = envoyé succès
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent'>('idle')
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    // Empêche le rechargement de la page (comportement par défaut des formulaires HTML)
     event.preventDefault()
     if (status === 'sending') return
 
     const form = event.currentTarget
     setStatus('sending')
+
+    // Simulation d'un appel API asynchrone (ex: fetch('/api/contact'))
+    // Ici on utilise setTimeout pour simuler la latence réseau
     setTimeout(() => {
       setStatus('sent')
       form.reset()

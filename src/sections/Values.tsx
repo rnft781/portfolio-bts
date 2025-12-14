@@ -17,9 +17,9 @@ const Values = () => {
     <section id="values" className="mb-20 scroll-mt-28">
       <div ref={revealRef} className="rounded-3xl border border-white/60 bg-white p-8 shadow-soft dark:border-slate-800 dark:bg-slate-900/70">
         <p className="text-sm font-semibold uppercase tracking-wide text-primary">Valeurs & soft skills</p>
-        <h2 className="mt-2 font-display text-3xl font-semibold text-slate-900 dark:text-white">Ce que j'apporte humainement</h2>
+        <h2 className="mt-2 font-display text-3xl font-semibold text-slate-900 dark:text-white">Savoir-être professionnel</h2>
         <p className="mt-3 text-sm text-slate-600 dark:text-slate-400">
-          Très utile pour les entreprises + E5. Qualités appréciées en entretien.
+          Qualités interpersonnelles et comportementales mises au service de l'équipe et des projets.
         </p>
         <div className="mt-6 grid gap-3 md:grid-cols-2">
           {values.map((value) => (
