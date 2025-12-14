@@ -1,39 +1,38 @@
-import { useState } from 'react'
 import type { FormEvent } from 'react'
 import { Clock, Mail, MapPin, Phone } from 'lucide-react'
 
 const Contact = () => {
-  // Gestion de l'état du formulaire (machine à états simple)
-  // 'idle' = en attente, 'sending' = envoi en cours, 'sent' = envoyé succès
-  const [status, setStatus] = useState<'idle' | 'sending' | 'sent'>('idle')
-
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    // Empêche le rechargement de la page (comportement par défaut des formulaires HTML)
     event.preventDefault()
-    if (status === 'sending') return
 
-    const form = event.currentTarget
-    setStatus('sending')
+    // Récupération des données du formulaire
+    const formData = new FormData(event.currentTarget)
+    const name = formData.get('fullname')?.toString() || ''
+    const email = formData.get('email')?.toString() || ''
+    const message = formData.get('message')?.toString() || ''
 
-    // Simulation d'un appel API asynchrone (ex: fetch('/api/contact'))
-    // Ici on utilise setTimeout pour simuler la latence réseau
-    setTimeout(() => {
-      setStatus('sent')
-      form.reset()
-    }, 1200)
+    // Construction du lien mailto
+    const subject = encodeURIComponent(`Contact Portfolio de ${name}`)
+    const body = encodeURIComponent(`Nom: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)
+
+    // Ouverture du client mail par défaut
+    window.location.href = `mailto:afrelaut.ledantec@gmail.com?subject=${subject}&body=${body}`
+
+    // Reset du formulaire (optionnel)
+    event.currentTarget.reset()
   }
 
   return (
     <section id="contact" className="scroll-mt-28">
-      <div className="grid gap-8 rounded-3xl border border-white/60 bg-white/80 p-8 shadow-soft dark:border-slate-800 dark:bg-slate-900/70 lg:grid-cols-[1fr_1fr]">
+      <div className="grid gap-8 rounded-3xl border border-white/60 bg-white/80 p-8 shadow-sm dark:border-slate-800 dark:bg-slate-900/70 lg:grid-cols-[1fr_1fr]">
         <div>
           <p className="text-sm font-semibold uppercase tracking-wide text-primary">Contact</p>
           <h2 className="mt-2 font-display text-3xl font-semibold text-slate-900 dark:text-white">
-            Prendre contact (simulation locale)
+            Prendre contact
           </h2>
           <p className="mt-4 text-sm text-slate-600 dark:text-slate-400">
-            Le formulaire ci-contre simule l&apos;envoi d&apos;un message via un simple setTimeout afin de rester 100% local.
-            Pour un vrai échange, utilisez l&apos;email ou le téléphone ci-dessous.
+            Une opportunité d'alternance ou une question sur mon parcours ?
+            N'hésitez pas à m'envoyer un message via le formulaire ou directement par email.
           </p>
 
           <div className="mt-6 space-y-4 text-sm text-slate-600 dark:text-slate-300">
@@ -51,7 +50,7 @@ const Contact = () => {
             </div>
             <div className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white/90 p-4 dark:border-slate-800 dark:bg-slate-900/80">
               <Clock size={18} className="text-primary" />
-              Réponse sous 24h en période scolaire
+              Réponse sous 24h
             </div>
           </div>
         </div>
@@ -90,15 +89,11 @@ const Contact = () => {
             </label>
             <button
               type="submit"
-              disabled={status === 'sending'}
-              className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-70"
+              className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:-translate-y-0.5"
             >
-              {status === 'sending' ? 'Envoi en cours...' : status === 'sent' ? 'Message envoyé (simulation)' : 'Envoyer le message'}
+              Envoyer le message (via Email)
             </button>
           </div>
-          {status === 'sent' && (
-            <p className="mt-3 text-xs font-medium text-emerald-500">Message envoyé (simulation). Merci pour votre intérêt !</p>
-          )}
         </form>
       </div>
     </section>
