@@ -1,14 +1,487 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Portfolio local BTS SIO SLAM par Aurélien Frélaut pour l'épreuve E5." />
-    <title>Portfolio BTS SIO · Aurélien Frélaut</title>
-  </head>
-  <body class="antialiased selection:bg-primary/20 selection:text-primary">
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil · Aurélien Frélaut</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container navbar-content">
+            <a href="index.html" class="brand">Aurélien Frélaut</a>
+            <nav class="nav-links">
+                <a href="#hero" class="active">Accueil</a>
+                <a href="#parcours">Parcours</a>
+                <a href="#certifications">Certifications</a>
+                <a href="#cv">CV</a>
+                <a href="#competences">Compétences</a>
+                <a href="#e5">E5</a>
+                <a href="#stages">Stages</a>
+                <a href="mailto:afrelaut.ledantec@gmail.com" class="btn-primary">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section id="hero" class="section reveal-hidden">
+            <div class="hero-grid">
+                <div class="hero-card main-card">
+                    <h1>Aurélien Frélaut</h1>
+                    <p class="subtitle">Développeur Web & SLAM</p>
+                    <p class="intro">
+                        Étudiant en BTS SIO option SLAM.
+                    </p>
+                </div>
+                <div class="hero-card contact-card">
+                    <div class="icon-circle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="20" height="16" x="2" y="4" rx="2" />
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                        </svg>
+                    </div>
+                    <p class="label">Email</p>
+                    <a href="mailto:afrelaut.ledantec@gmail.com" class="link">afrelaut.ledantec@gmail.com</a>
+                </div>
+                <div class="hero-card location-card">
+                    <h3>Basé en Bretagne</h3>
+                    <p>Lannion (22) · Étudiant au Lycée Félix Le Dantec</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section reveal-hidden">
+            <div class="bento-grid">
+                <div class="about-text">
+                    <span class="badge">À propos</span>
+                    <h2>Parcours & ambition</h2>
+                    <p>
+                        Actuellement étudiant en BTS SIO (Services Informatiques aux Organisations), option SLAM
+                        (Solutions Logicielles et Applications Métiers) au Lycée Félix Le Dantec à Lannion.
+                    </p>
+                    <p>
+                        Je me forme au développement web et logiciel à travers mes cours et mes stages.
+                    </p>
+                </div>
+                <div class="about-details">
+                    <div class="detail-card">
+                        <div class="detail-header">
+                            <svg class="icon-primary" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                                <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                            </svg>
+                            <span>BTS SIO (SLAM) – 2024-2026</span>
+                        </div>
+                        <p>Apprentissage du développement, des bases de données et de la gestion de projet.</p>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-header">
+                            <svg class="icon-primary" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            <span>Lannion · Bretagne</span>
+                        </div>
+                        <p>Étudiant au Lycée Félix Le Dantec.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Parcours Section -->
+        <section id="parcours" class="section reveal-hidden">
+            <div class="card-container">
+                <span class="badge">Parcours</span>
+                <h2>Timeline BTS & expériences</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-year">2023</span>
+                        <h3>Entrée en BTS SIO (SLAM)</h3>
+                        <p>Découverte des bonnes pratiques de développement et des exigences du référentiel E5.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-year">2024</span>
+                        <h3>Projets SLAM & premières réalisations</h3>
+                        <p>Mini plateforme PHP, application To-Do JavaScript, maîtrise de GitHub et Trello.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-year">2025</span>
+                        <h3>Stage Leano Design (mai – juin)</h3>
+                        <p>Réalisations vitrines, intégration responsive et support utilisateur.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-year">2026</span>
+                        <h3>Objectif : Alternance / poursuite d’étude</h3>
+                        <p>Cherche un environnement pour consolider mes compétences front & support.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="section reveal-hidden">
+            <div class="card-container">
+                <span class="badge">Certifications & attestations</span>
+                <h2>Compétences validées</h2>
+                <p class="section-desc">Liste évolutive des validations officielles qui rassurent un tuteur, un
+                    professeur ou un employeur.</p>
+
+                <div class="certif-grid">
+                    <!-- Certif 1 -->
+                    <article class="certif-card">
+                        <div class="certif-visual">
+                            <div class="certif-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="text-primary">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                    <path d="M14 2v6h6" />
+                                    <path d="M16 13H8" />
+                                    <path d="M16 17H8" />
+                                    <path d="M10 9H8" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="certif-content">
+                            <div class="certif-header">
+                                <div>
+                                    <h3>Sensibilisation cybersécurité</h3>
+                                    <p class="issuer">ANSSI / SecNumAcadémie</p>
+                                </div>
+                                <span class="tag-success">Validée</span>
+                            </div>
+                            <div class="certif-footer">
+                                <span>Obtenu en 2023</span>
+                                <a href="certif-secnum.pdf" target="_blank" class="link-small">Voir le justificatif</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Certif 2 -->
+                    <article class="certif-card">
+                        <div class="certif-visual">
+                            <div class="certif-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="text-primary">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                    <path d="M14 2v6h6" />
+                                    <path d="M16 13H8" />
+                                    <path d="M16 17H8" />
+                                    <path d="M10 9H8" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="certif-content">
+                            <div class="certif-header">
+                                <div>
+                                    <h3>Module 3 - Responsabilités</h3>
+                                    <p class="issuer">ANSSI</p>
+                                </div>
+                                <span class="tag-success">Validée</span>
+                            </div>
+                            <div class="certif-footer">
+                                <span>Obtenu en 2023</span>
+                                <a href="certif-module3.pdf" target="_blank" class="link-small">Voir le justificatif</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Certif 3 -->
+                    <article class="certif-card">
+                        <div class="certif-visual">
+                            <div class="certif-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="text-primary">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                    <path d="M14 2v6h6" />
+                                    <path d="M16 13H8" />
+                                    <path d="M16 17H8" />
+                                    <path d="M10 9H8" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="certif-content">
+                            <div class="certif-header">
+                                <div>
+                                    <h3>Attestation ANSSI</h3>
+                                    <p class="issuer">ANSSI</p>
+                                </div>
+                                <span class="tag-success">Validée</span>
+                            </div>
+                            <div class="certif-footer">
+                                <span>Obtenu en 2023</span>
+                                <a href="certif-anssi.pdf" target="_blank" class="link-small">Voir le justificatif</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CV Section -->
+        <section id="cv" class="section reveal-hidden">
+            <div class="card-container">
+                <div class="cv-flex">
+                    <div class="cv-text">
+                        <h2>Curriculum Vitae</h2>
+                        <p>Consultez mon parcours détaillé, mes formations et mes compétences techniques dans mon CV
+                            complet au format PDF.</p>
+                    </div>
+                    <div class="cv-action">
+                        <a href="cv-aurelien-frelaut.pdf" target="_blank" class="btn-primary large">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                <polyline points="7 10 12 15 17 10" />
+                                <line x1="12" x2="12" y1="15" y2="3" />
+                            </svg>
+                            Télécharger le CV
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Competences Section -->
+        <section id="competences" class="section reveal-hidden">
+            <div class="card-container">
+                <div class="skills-header">
+                    <div>
+                        <span class="badge">Compétences</span>
+                        <h2>Socle technique BTS SIO</h2>
+                    </div>
+                    <p class="skills-desc">Compétences mobilisées dans les réalisations professionnelles et lors du
+                        stage chez Leano Design.</p>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3>Développement Back-end & BDD</h3>
+                        <ul class="skill-list">
+                            <li>PHP 8</li>
+                            <li>MySQL</li>
+                            <li>Symfony (Bases)</li>
+                            <li>Modélisation MCD/MLD</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Développement Front-end</h3>
+                        <ul class="skill-list">
+                            <li>HTML5 / CSS3</li>
+                            <li>JavaScript ES6+</li>
+                            <li>Bootstrap</li>
+                            <li>Responsive Design</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Outils & Environnement</h3>
+                        <ul class="skill-list">
+                            <li>Git / GitHub</li>
+                            <li>VS Code</li>
+                            <li>Wamp / XAMPP</li>
+                            <li>Trello (Méthode Agile)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- E5 Section -->
+        <section id="e5" class="section reveal-hidden">
+            <div class="e5-container">
+                <div class="e5-header">
+                    <span>BTS SERVICES INFORMATIQUES AUX ORGANISATIONS</span>
+                    <span>SESSION 2026</span>
+                </div>
+                <div class="e5-info">
+                    <strong>Tableau de synthèse des réalisations professionnelles</strong>
+                    <div class="e5-info-grid">
+                        <p><strong>NOM et prénom :</strong> Frélaut Aurélien</p>
+                        <p><strong>N° candidat :</strong> ........................</p>
+                        <p><strong>Centre de formation :</strong> Lycée Félix Le Dantec</p>
+                        <p><strong>Option :</strong> SLAM (Checked)</p>
+                    </div>
+                </div>
+                <div class="table-wrapper">
+                    <table class="e5-table">
+                        <thead>
+                            <tr>
+                                <th width="15%">Compétences mises en œuvre</th>
+                                <th width="10%">Période</th>
+                                <th width="12.5%">Gérer le patrimoine</th>
+                                <th width="12.5%">Répondre aux incidents</th>
+                                <th width="12.5%">Dév. la présence en ligne</th>
+                                <th width="12.5%">Travailler en projet</th>
+                                <th width="12.5%">Mettre à dispo un service</th>
+                                <th width="12.5%">Dév. professionnel</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- School Projects -->
+                            <tr class="section-title">
+                                <td colspan="8">Réalisation en cours de formation</td>
+                            </tr>
+                            <tr>
+                                <td><strong>PROJET EGNARO</strong><br><em>hebergement site web egnaro</em></td>
+                                <td>01/09/2024 - 06/01/2025</td>
+                                <td class="check">X</td>
+                                <td class="check">X</td>
+                                <td class="check">X</td>
+                                <td class="check">X</td>
+                                <td class="check">X</td>
+                                <td class="check">X</td>
+                            </tr>
+                            <tr>
+                                <td><strong>SITE Métiers</strong><br><em>après le BTS SIO</em></td>
+                                <td>10/11/2024 - 06/01/2025</td>
+                                <td class="check">X</td>
+                                <td class="check"></td>
+                                <td class="check">X</td>
+                                <td class="check">X</td>
+                                <td class="check">X</td>
+                                <td class="check">X</td>
+                            </tr>
+
+                            <!-- Pro Projects Year 1 -->
+                            <tr class="section-title">
+                                <td colspan="8">Réalisations en milieu professionnel (1ère année)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Stage Leano Design</strong><br><em>Intégration & Support</em></td>
+                                <td>26/05/2025 - 26/06/2025</td>
+                                <td class="check">X</td>
+                                <td class="check">X</td>
+                                <td class="check">X</td>
+                                <td class="check">X</td>
+                                <td class="check"></td>
+                                <td class="check">X</td>
+                            </tr>
+
+                            <!-- Pro Projects Year 2 -->
+                            <tr class="section-title">
+                                <td colspan="8">Réalisations en milieu professionnel en cours de seconde année</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Stage Site web Factor-I</strong><br><em>Développement Web</em></td>
+                                <td>05/01/2026 - 21/02/2026</td>
+                                <td class="check">X</td>
+                                <td class="check">X</td>
+                                <td class="check">X</td>
+                                <td class="check">X</td>
+                                <td class="check"></td>
+                                <td class="check">X</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <p class="table-caption">Tableau généré numériquement - Certification BTS SIO 2026</p>
+        </section>
+
+        <!-- Stages Section -->
+        <section id="stages" class="section reveal-hidden">
+            <div class="text-center">
+                <h2>Mes Stages</h2>
+                <p>Voici les missions que j’ai effectuées durant mes deux stages de BTS SIO SLAM.</p>
+            </div>
+            <div class="stages-grid">
+                <!-- Stage 1 -->
+                <div class="stage-card">
+                    <h3 class="text-primary">Stage 1 — Développement Web</h3>
+                    <div class="stage-meta">
+                        <p><strong>Entreprise :</strong> Leano Design</p>
+                        <p><strong>Période :</strong> Mai - Juin 2025</p>
+                        <p><strong>Mission principale :</strong> Développement d’un site web de type vitrine pour
+                            présenter les services de l'agence et optimiser la visibilité en ligne.</p>
+                    </div>
+                    <div class="stage-details">
+                        <div>
+                            <h4 class="text-primary">Objectifs :</h4>
+                            <ul>
+                                <li>Créer une interface responsive et accessible en HTML / CSS / JS</li>
+                                <li>Optimiser le référencement naturel (SEO) et les performances</li>
+                                <li>Mettre en place une documentation technique pour la maintenance</li>
+                                <li>Collaborer avec l'équipe design pour respecter la charte graphique</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-primary">Compétences mobilisées :</h4>
+                            <ul>
+                                <li>Développement Front-End</li>
+                                <li>Intégration Web (CSS3/Flexbox)</li>
+                                <li>Travail en méthode Agile</li>
+                                <li>Gestion de versions (Git/GitHub)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stage 2 -->
+                <div class="stage-card">
+                    <h3 class="text-primary">Stage 2 — Développement Web</h3>
+                    <div class="stage-meta">
+                        <p><strong>Entreprise :</strong> Factor-I</p>
+                        <p><strong>Période :</strong> Janvier - Février 2026</p>
+                        <p><strong>Mission principale :</strong> Développement et maintenance, avec un focus sur
+                            l'automatisation des processus internes.</p>
+                    </div>
+                    <div class="stage-details">
+                        <div>
+                            <h4 class="text-primary">Objectifs :</h4>
+                            <ul>
+                                <li>Concevoir et développer des fonctionnalités back-end</li>
+                                <li>Manipuler des bases de données relationnelles</li>
+                                <li>Assurer la sécurité des données utilisateurs</li>
+                                <li>Participer aux réunions techniques et aux revues de code</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-primary">Compétences mobilisées :</h4>
+                            <ul>
+                                <li>Développement Back-End</li>
+                                <li>Bases de données (SQL)</li>
+                                <li>Travail en équipe</li>
+                                <li>Analyse des besoins</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-left">
+                <p>© 2026 Aurélien Frélaut · Portfolio BTS SIO SLAM</p>
+                <p class="text-small">Projet local validable pour l’épreuve E5.</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/aurelien-bts" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/aurelien-bts" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
 </html>
