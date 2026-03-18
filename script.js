@@ -2,19 +2,16 @@
 // Récupérer toutes les sections marquées pour l'animation
 const revealElements = document.querySelectorAll('.reveal-hidden');
 
-// Créer l'observateur
+// Créer l'observateur — seuil bas pour déclencher rapidement
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            // Ajouter la classe visible quand l'élément entre dans l'écran
             entry.target.classList.add('reveal-visible');
-            // Arrêter d'observer une fois l'animation jouée (optionnel)
-            // observer.unobserve(entry.target);
         }
     });
 }, {
-    threshold: 0.15, // Démarrer l'animation quand 15% de l'élément est visible
-    rootMargin: "-20px"
+    threshold: 0.05,  // 5% suffit — déclenche plus tôt
+    rootMargin: "50px" // Anticipe de 50px avant l'entrée dans le viewport
 });
 
 // Lancer l'observation sur chaque élément
@@ -35,16 +32,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ScrollSpy - Mise à jour du lien actif au scroll
-const sections = document.querySelectorAll('section');
+const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a');
 
 const scrollSpyObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             const id = entry.target.getAttribute('id');
-            // Retirer la classe active de tous les liens
             navLinks.forEach(link => link.classList.remove('active'));
-            // Ajouter la classe active au lien correspondant
             const activeLink = document.querySelector(`.nav-links a[href="#${id}"]`);
             if (activeLink) {
                 activeLink.classList.add('active');
@@ -52,7 +47,7 @@ const scrollSpyObserver = new IntersectionObserver((entries) => {
         }
     });
 }, {
-    threshold: 0.3 // Déclenchement quand 30% de la section est visible
+    threshold: 0.2
 });
 
 sections.forEach(section => {
