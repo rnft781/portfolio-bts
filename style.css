@@ -1,5 +1,12 @@
+/*
+ * style.css - Feuille de style principale du portfolio
+ * Theme clair avec du violet comme couleur principale
+ * J'ai utilise des variables CSS pour pouvoir changer les
+ * couleurs facilement si besoin
+ */
+
 /* =========================================
-   1. VARIABLES & RESET — LIGHT THEME
+   1. Variables et reset
 ========================================= */
 :root {
     --primary: #6366f1;
