@@ -9,24 +9,31 @@
    1. Variables et reset
 ========================================= */
 :root {
+    /* Couleur principale - violet, ca donne un cote pro sans etre trop classique */
     --primary: #6366f1;
     --primary-dark: #4f46e5;
-    --primary-light: rgba(99, 102, 241, 0.08);
+    --primary-light: rgba(99, 102, 241, 0.08); /* version transparente pour les fonds legers */
+
+    /* Vert pour les elements positifs (tags valides, checkmarks) */
     --accent: #10b981;
     --accent-light: rgba(16, 185, 129, 0.08);
+
+    /* Orange pour les blocs d'avertissement / difficultes */
     --warning: #f59e0b;
     --warning-light: rgba(245, 158, 11, 0.08);
 
+    /* Couleurs de fond et texte */
     --bg: #ffffff;
-    --bg-soft: #f8f9fc;
+    --bg-soft: #f8f9fc; /* un gris tres leger pour differencier les zones */
     --bg-card: #ffffff;
     --bg-card-hover: #f8f9fc;
     --border: #e5e7eb;
     --border-hover: #c7c9d1;
     --text: #374151;
-    --text-muted: #6b7280;
+    --text-muted: #6b7280; /* pour le texte moins important */
     --text-heading: #111827;
 
+    /* Ombres - 3 niveaux selon l'importance de l'element */
     --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
     --shadow-md: 0 4px 16px rgba(0,0,0,0.06);
     --shadow-lg: 0 8px 32px rgba(0,0,0,0.08);
@@ -34,21 +41,27 @@
     --max-width: 1200px;
     --radius: 14px;
     --radius-sm: 10px;
+    /* cubic-bezier pour des transitions plus naturelles qu'un simple ease */
     --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Reset de base - supprime les marges par defaut des navigateurs */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
+    /* Inter comme font principale car tres lisible sur ecran */
+    /* Les fallbacks c'est au cas ou Google Fonts charge pas */
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    line-height: 1.7;
+    line-height: 1.7; /* 1.7 c'est bien pour la lisibilite, 1.5 c'est un peu serre */
     background-color: var(--bg-soft);
     color: var(--text);
 }
 
+/* Styles de base pour les liens, listes, titres et balises code */
 a { text-decoration: none; color: inherit; transition: var(--transition); }
 ul { list-style: none; }
 h1, h2, h3, h4 { color: var(--text-heading); font-weight: 700; line-height: 1.3; }
+/* Les balises <code> sont stylees pour bien ressortir dans le texte */
 code { background: var(--primary-light); padding: 2px 6px; border-radius: 4px; font-size: 0.85em; color: var(--primary-dark); }
 
 /* =========================================
@@ -60,6 +73,7 @@ code { background: var(--primary-light); padding: 2px 6px; border-radius: 4px; f
 .text-center { text-align: center; margin-bottom: 48px; }
 .text-center p { color: var(--text-muted); max-width: 600px; margin: 12px auto 0; }
 
+/* Petit label au-dessus de chaque section pour bien les identifier */
 .badge {
     display: inline-block; font-size: 0.72rem; font-weight: 700;
     text-transform: uppercase; letter-spacing: 1.5px;
@@ -67,14 +81,20 @@ code { background: var(--primary-light); padding: 2px 6px; border-radius: 4px; f
     padding: 6px 16px; border-radius: 20px; margin-bottom: 14px;
 }
 
+/* Animation au scroll - les elements commencent invisibles et decales de 24px */
+/* Quand le JS ajoute .reveal-visible, ils apparaissent en glissant vers le haut */
 .reveal-hidden { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .reveal-visible { opacity: 1; transform: translateY(0); }
 
 /* =========================================
-   3. NAVBAR
+   3. Barre de navigation
+   Fixee en haut de page avec un effet de flou
+   en arriere-plan quand on scroll
 ========================================= */
 .navbar {
     position: sticky; top: 0; z-index: 1000;
+    /* Fond semi-transparent + flou pour voir le contenu defiler derriere */
+    /* J'ai trouve cette technique en regardant comment Apple fait sur son site */
     background: rgba(255, 255, 255, 0.88); backdrop-filter: blur(16px) saturate(180%);
     border-bottom: 1px solid var(--border);
 }
@@ -97,7 +117,9 @@ code { background: var(--primary-light); padding: 2px 6px; border-radius: 4px; f
 .btn-primary.large { padding: 14px 28px; font-size: 1rem; }
 
 /* =========================================
-   4. HERO
+   4. Section d'accueil (hero)
+   Layout en grille : carte principale a gauche (2/3)
+   et infos de contact a droite (1/3)
 ========================================= */
 .hero-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; }
 .hero-card {
@@ -138,7 +160,9 @@ code { background: var(--primary-light); padding: 2px 6px; border-radius: 4px; f
 .icon-primary { color: var(--primary); flex-shrink: 0; }
 
 /* =========================================
-   6. CARD CONTAINER
+   6. Conteneur de carte
+   C'est le composant reutilisable pour les sections
+   parcours, competences, certifications, etc.
 ========================================= */
 .card-container {
     background: var(--bg-card); border: 1px solid var(--border);
@@ -148,14 +172,17 @@ code { background: var(--primary-light); padding: 2px 6px; border-radius: 4px; f
 .card-container h2 { font-size: 1.5rem; margin-bottom: 24px; }
 .section-desc { color: var(--text-muted); margin-bottom: 24px; }
 
-/* Timeline */
+/* Timeline du parcours */
+/* La ligne verticale est faite avec border-left */
+/* Les points sont des pseudo-elements ::before positionnes sur la ligne */
 .timeline { position: relative; padding-left: 28px; border-left: 2px solid var(--border); }
 .timeline-item { position: relative; margin-bottom: 32px; padding-left: 20px; }
 .timeline-item::before {
+    /* Le petit cercle violet sur la ligne de timeline */
     content: ''; position: absolute; left: -34px; top: 6px;
     width: 12px; height: 12px; border-radius: 50%;
     background: var(--primary); border: 3px solid var(--bg);
-    box-shadow: 0 0 0 3px var(--primary-light);
+    box-shadow: 0 0 0 3px var(--primary-light); /* halo leger autour */
 }
 .timeline-year {
     display: inline-block; font-size: 0.72rem; font-weight: 700;
@@ -212,12 +239,15 @@ code { background: var(--primary-light); padding: 2px 6px; border-radius: 4px; f
 .skill-list li:last-child { border-bottom: none; }
 
 /* =========================================
-   7. E5 TABLE
+   7. Tableau de synthese E5
+   C'est le tableau obligatoire pour l'examen
+   Il montre quels projets couvrent quelles competences
 ========================================= */
 .e5-container {
     background: var(--bg-card); border: 1px solid var(--border);
     border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm);
 }
+/* En-tete violet du tableau - reprend l'en-tete officiel du BTS */
 .e5-header {
     display: flex; justify-content: space-between; padding: 16px 24px;
     background: var(--primary); color: #fff; font-weight: 700; font-size: 0.85rem;
@@ -225,6 +255,7 @@ code { background: var(--primary-light); padding: 2px 6px; border-radius: 4px; f
 .e5-info { padding: 20px 24px; border-bottom: 1px solid var(--border); }
 .e5-info strong { display: block; margin-bottom: 12px; }
 .e5-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 0.9rem; color: var(--text-muted); }
+/* overflow-x pour que le tableau soit scrollable sur mobile */
 .table-wrapper { overflow-x: auto; }
 .e5-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
 .e5-table th {
@@ -233,11 +264,14 @@ code { background: var(--primary-light); padding: 2px 6px; border-radius: 4px; f
     letter-spacing: 0.5px; border-bottom: 2px solid var(--primary);
 }
 .e5-table td { padding: 12px 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
+/* Les X de validation sont en vert pour bien ressortir */
 .e5-table .check { text-align: center; font-weight: 700; color: var(--accent); }
+/* Lignes de separation entre les categories de projets */
 .e5-table .section-title td {
     background: var(--primary-light); color: var(--primary);
     font-weight: 700; font-size: 0.8rem; padding: 10px 12px;
 }
+/* Les noms de projets sont cliquables, ils renvoient vers la fiche detaillee */
 .e5-table a { color: var(--primary); font-weight: 600; }
 .e5-table a:hover { text-decoration: underline; }
 .table-caption { text-align: center; font-size: 0.8rem; color: var(--text-muted); padding: 16px; }
@@ -261,7 +295,10 @@ code { background: var(--primary-light); padding: 2px 6px; border-radius: 4px; f
 .stage-details li { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 6px; }
 
 /* =========================================
-   9. RÉALISATIONS
+   9. Fiches de realisation
+   C'est la partie la plus importante pour l'E5
+   Chaque fiche detaille un projet avec :
+   contexte, contribution, code, difficultes
 ========================================= */
 .realisations-intro { text-align: center; margin-bottom: 48px; }
 .realisations-intro h2 { font-size: 1.9rem; margin-bottom: 12px; }
@@ -304,11 +341,14 @@ code { background: var(--primary-light); padding: 2px 6px; border-radius: 4px; f
     color: var(--text);
 }
 
-/* Code block */
+/* Blocs de code - fond sombre meme sur theme clair */
+/* J'ai garde un fond sombre pour les extraits de code parce que */
+/* c'est plus lisible comme ca, et ca ressemble a un vrai IDE */
 .code-block {
     background: #1e1e2e; border: 1px solid #313244;
     border-radius: var(--radius-sm); overflow: hidden; margin: 16px 0;
 }
+/* Barre du haut qui montre le langage et le nom du fichier */
 .code-block-header {
     display: flex; justify-content: space-between; align-items: center;
     padding: 8px 16px; background: #181825; border-bottom: 1px solid #313244;
@@ -318,12 +358,15 @@ code { background: var(--primary-light); padding: 2px 6px; border-radius: 4px; f
     padding: 16px; overflow-x: auto; font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
     font-size: 0.82rem; line-height: 1.65; color: #cdd6f4;
 }
+/* Coloration syntaxique manuelle - pas de librairie externe */
+/* J'ai utilise des spans avec des classes pour colorier le code */
 .code-comment { color: #6c7086; }
 .code-keyword { color: #cba6f7; }
 .code-string { color: #a6e3a1; }
 .code-function { color: #89b4fa; }
 
-/* Difficulty block */
+/* Bloc orange pour les difficultes rencontrees */
+/* En orange pour bien le differencier du reste et attirer l'oeil du jury */
 .difficulty-block {
     background: var(--warning-light); border: 1px solid rgba(245, 158, 11, 0.2);
     border-radius: var(--radius-sm); padding: 20px; margin-top: 24px;
@@ -396,14 +439,18 @@ footer {
 .footer-links a:hover { color: var(--primary); }
 
 /* =========================================
-   12. RESPONSIVE
+   12. Responsive
+   En dessous de 768px (telephone/tablette)
+   on passe tout en une seule colonne
+   et on cache la nav (pas de burger pour l'instant)
 ========================================= */
 @media (max-width: 768px) {
+    /* Toutes les grilles passent en colonne unique */
     .hero-grid { grid-template-columns: 1fr; }
     .main-card { grid-column: 1; grid-row: auto; }
     .main-card h1 { font-size: 2rem; }
     .bento-grid { grid-template-columns: 1fr; }
-    .nav-links { display: none; }
+    .nav-links { display: none; } /* TODO: ajouter un menu burger plus tard */
     .stages-grid { grid-template-columns: 1fr; }
     .realisation-grid { grid-template-columns: 1fr; }
     .stage-details { grid-template-columns: 1fr; }
@@ -412,6 +459,7 @@ footer {
     .e5-info-grid { grid-template-columns: 1fr; }
     .footer-content { flex-direction: column; text-align: center; }
     .realisation-header { flex-direction: column; }
+    /* Moins de padding sur mobile pour gagner de la place */
     .card-container { padding: 24px; }
     .realisation-body { padding: 24px; }
 }
