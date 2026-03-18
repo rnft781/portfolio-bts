@@ -1,27 +1,46 @@
 <!DOCTYPE html>
+<!-- DOCTYPE html : indique au navigateur qu'on utilise HTML5 -->
 <html lang="fr">
+<!-- lang="fr" : important pour le referencement et l'accessibilite, ca dit que la page est en francais -->
 
 <head>
+    <!-- charset UTF-8 : permet d'afficher les caracteres speciaux (accents, etc.) -->
     <meta charset="UTF-8">
+
+    <!-- viewport : indispensable pour le responsive, ca adapte la page a la taille de l'ecran -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- title : le titre qui s'affiche dans l'onglet du navigateur, important pour le SEO -->
     <title>Portfolio E5 - Aurelien Frelaut | BTS SIO SLAM</title>
+
+    <!-- meta description : resume de la page pour Google, ca s'affiche dans les resultats de recherche -->
     <meta name="description" content="Portfolio BTS SIO SLAM - Aurelien Frelaut. Realisations professionnelles, competences et veille technologique.">
 
-    <!-- Fonts Google - Inter pour le texte, Space Grotesk pour les titres -->
+    <!-- preconnect : on se connecte a Google Fonts en avance pour que les polices chargent plus vite -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- On charge deux polices : Inter (texte courant) et Space Grotesk (titres) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
-    <!-- Feuille de style principale -->
+    <!-- link vers la feuille de style CSS externe, tout le style est dans ce fichier -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- Barre de navigation fixe en haut -->
+    <!--
+        HEADER : contient la barre de navigation
+        J'utilise la balise <header> plutot que <div> parce que c'est une balise semantique,
+        ca aide les moteurs de recherche et les lecteurs d'ecran a comprendre la structure
+    -->
     <header class="navbar">
+        <!-- container : classe utilitaire pour centrer le contenu et limiter la largeur -->
         <div class="container navbar-content">
+            <!-- Lien vers le haut de page avec mon nom comme logo texte -->
             <a href="#hero" class="brand">Aurelien Frelaut</a>
+
+            <!-- nav : balise semantique pour la navigation, mieux qu'un simple div -->
+            <!-- Les liens utilisent des ancres (#) pour naviguer vers les sections de la page -->
             <nav class="nav-links">
                 <a href="#hero" class="active">Accueil</a>
                 <a href="#parcours">Parcours</a>
@@ -30,17 +49,30 @@
                 <a href="#competences">Competences</a>
                 <a href="#certifications">Certifications</a>
                 <a href="#veille">Veille</a>
+                <!-- mailto: ouvre le client mail de l'utilisateur quand il clique -->
                 <a href="mailto:afrelaut.ledantec@gmail.com" class="btn-primary">Contact</a>
             </nav>
         </div>
     </header>
 
+    <!--
+        MAIN : le contenu principal de la page
+        Tout sauf le header et le footer va dedans
+        C'est aussi une balise semantique HTML5
+    -->
     <main class="container">
 
-        <!-- Section d'accueil avec presentation rapide -->
+        <!--
+            SECTION HERO (accueil)
+            reveal-hidden : classe pour l'animation au scroll (geree par le JS)
+            id="hero" : permet d'y acceder via le lien #hero dans la nav
+        -->
         <section id="hero" class="section reveal-hidden">
+            <!-- Grille CSS : carte principale a gauche (2/3), infos a droite (1/3) -->
             <div class="hero-grid">
+                <!-- Carte principale avec nom et presentation -->
                 <div class="hero-card main-card">
+                    <!-- h1 : titre principal, il doit y en avoir qu'un seul par page pour le SEO -->
                     <h1>Aurelien Frelaut</h1>
                     <p class="subtitle">BTS SIO - Option SLAM</p>
                     <p class="intro">
@@ -49,14 +81,19 @@
                         pas mal d'autres domaines comme les reseaux ou la securite.
                     </p>
                 </div>
+
+                <!-- Carte contact avec icone email -->
                 <div class="hero-card contact-card">
                     <div class="icon-circle">
-                        <!-- Icone email en SVG -->
+                        <!-- SVG : icone vectorielle integree directement dans le HTML -->
+                        <!-- J'utilise SVG plutot qu'une image parce que ca charge plus vite et ca se redimensionne sans perte -->
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                     </div>
                     <p class="label">Email</p>
                     <a href="mailto:afrelaut.ledantec@gmail.com" class="link">afrelaut.ledantec@gmail.com</a>
                 </div>
+
+                <!-- Carte localisation -->
                 <div class="hero-card location-card">
                     <h3>Base en Bretagne</h3>
                     <p>Lannion (22) - Lycee Felix Le Dantec</p>
@@ -64,10 +101,15 @@
             </div>
         </section>
 
-        <!-- Quelques infos en plus sur mon parcours -->
+        <!--
+            SECTION A PROPOS
+            Presentation plus detaillee de mon parcours
+        -->
         <section id="about" class="section reveal-hidden">
+            <!-- bento-grid : disposition en grille inspiree du design "bento" (Apple utilise ca) -->
             <div class="bento-grid">
                 <div class="about-text">
+                    <!-- badge : petit label colore pour identifier chaque section -->
                     <span class="badge">A propos</span>
                     <h2>Mon parcours</h2>
                     <p>
@@ -80,15 +122,19 @@
                     </p>
                 </div>
                 <div class="about-details">
+                    <!-- Carte formation avec icone SVG -->
                     <div class="detail-card">
                         <div class="detail-header">
+                            <!-- Icone graduation en SVG -->
                             <svg class="icon-primary" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
                             <span>BTS SIO (SLAM) - 2024-2026</span>
                         </div>
                         <p>Dev web, bases de donnees, gestion de projet, un peu de reseau aussi.</p>
                     </div>
+                    <!-- Carte localisation -->
                     <div class="detail-card">
                         <div class="detail-header">
+                            <!-- Icone position geographique -->
                             <svg class="icon-primary" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
                             <span>Lannion - Bretagne</span>
                         </div>
@@ -98,11 +144,17 @@
             </div>
         </section>
 
-        <!-- Timeline du BTS -->
+        <!--
+            SECTION PARCOURS
+            Timeline verticale qui montre la chronologie du BTS
+            Chaque etape est un div.timeline-item
+        -->
         <section id="parcours" class="section reveal-hidden">
             <div class="card-container">
                 <span class="badge">Parcours</span>
                 <h2>Ce que j'ai fait depuis le debut du BTS</h2>
+                <!-- La timeline est stylisee avec une bordure gauche en CSS -->
+                <!-- Les points sont faits avec des pseudo-elements ::before -->
                 <div class="timeline">
                     <div class="timeline-item">
                         <span class="timeline-year">2024</span>
@@ -128,13 +180,20 @@
             </div>
         </section>
 
-        <!-- Tableau de synthese E5 (obligatoire pour l'examen) -->
+        <!--
+            SECTION E5 - TABLEAU DE SYNTHESE
+            C'est le tableau obligatoire pour l'examen E5 du BTS SIO
+            Il montre quels projets couvrent quelles competences du referentiel
+            Les noms de projets sont cliquables et renvoient vers les fiches detaillees
+        -->
         <section id="e5" class="section reveal-hidden">
             <div class="e5-container">
+                <!-- En-tete du tableau avec le nom de l'epreuve et la session -->
                 <div class="e5-header">
                     <span>BTS SERVICES INFORMATIQUES AUX ORGANISATIONS</span>
                     <span>SESSION 2026</span>
                 </div>
+                <!-- Infos candidat -->
                 <div class="e5-info">
                     <strong>Tableau de synthese des realisations professionnelles</strong>
                     <div class="e5-info-grid">
@@ -144,7 +203,11 @@
                         <p><strong>Option :</strong> SLAM</p>
                     </div>
                 </div>
+
+                <!-- table-wrapper : permet le scroll horizontal sur mobile si le tableau est trop large -->
                 <div class="table-wrapper">
+                    <!-- Table HTML classique avec thead (en-tete) et tbody (contenu) -->
+                    <!-- width sur les th : je fixe les largeurs pour que le tableau soit bien reparti -->
                     <table class="e5-table">
                         <thead>
                             <tr>
@@ -159,8 +222,11 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- Projets faits en cours -->
+                            <!-- Sous-titre pour les projets faits en cours -->
+                            <!-- colspan="8" : fusionne les 8 colonnes en une seule pour le titre -->
                             <tr class="section-title"><td colspan="8">Realisations en cours de formation</td></tr>
+
+                            <!-- Chaque projet : lien cliquable vers la fiche + X pour les competences couvertes -->
                             <tr>
                                 <td><a href="#real-egnaro"><strong>PROJET EGNARO</strong></a><br><em>Hebergement site web</em></td>
                                 <td>09/2024 - 01/2025</td>
@@ -169,6 +235,7 @@
                             <tr>
                                 <td><a href="#real-metiers"><strong>SITE Metiers</strong></a><br><em>Apres le BTS SIO</em></td>
                                 <td>11/2024 - 01/2025</td>
+                                <!-- td vide = competence pas couverte par ce projet -->
                                 <td class="check">X</td><td class="check"></td><td class="check">X</td><td class="check">X</td><td class="check">X</td><td class="check">X</td>
                             </tr>
 
@@ -194,11 +261,19 @@
             <p class="table-caption">Tableau de synthese - BTS SIO 2026</p>
         </section>
 
-        <!-- =============================================
-             REALISATIONS DETAILLEES
-             Chaque projet est decrit avec ce que j'ai fait,
-             les technos utilisees, et les problemes rencontres
-        ============================================= -->
+        <!--
+            =============================================
+            SECTION REALISATIONS DETAILLEES
+            C'est la partie la plus importante pour le jury E5
+            Chaque projet a sa propre fiche (article) avec :
+            - le contexte du projet
+            - ce que j'ai fait personnellement
+            - les technologies utilisees
+            - un extrait de code commente
+            - les problemes rencontres et comment je les ai resolus
+            - les competences E5 couvertes
+            =============================================
+        -->
         <section id="realisations" class="section reveal-hidden">
             <div class="realisations-intro">
                 <span class="badge">Epreuve E5</span>
@@ -206,13 +281,23 @@
                 <p>Voici le detail de chaque projet avec ce que j'ai fait concretement, les problemes que j'ai rencontres et comment je les ai resolus.</p>
             </div>
 
-            <!-- PROJET EGNARO -->
+            <!--
+                FICHE 1 : PROJET EGNARO
+                J'utilise <article> plutot que <div> parce que c'est une balise semantique
+                qui indique un contenu independant (comme un article de blog ou une fiche)
+                id="real-egnaro" : permet d'y acceder via le lien dans le tableau E5
+            -->
             <article id="real-egnaro" class="realisation-card">
+                <!-- En-tete de la fiche avec le titre et la periode -->
                 <div class="realisation-header">
+                    <!-- span dans le h3 : pour pouvoir colorier juste le nom du projet en CSS -->
                     <h3><span>Projet EGNARO</span> - Hebergement d'un site web</h3>
                     <span class="realisation-period">Sept. 2024 - Jan. 2025</span>
                 </div>
+
+                <!-- Corps de la fiche -->
                 <div class="realisation-body">
+                    <!-- Grille 2 colonnes : contexte a gauche, contribution a droite -->
                     <div class="realisation-grid">
                         <div class="realisation-block">
                             <h4>Contexte</h4>
@@ -224,6 +309,7 @@
                         </div>
                         <div class="realisation-block">
                             <h4>Ce que j'ai fait</h4>
+                            <!-- ul/li : liste a puces pour lister mes contributions -->
                             <ul>
                                 <li>Installation et configuration d'Apache sur Debian</li>
                                 <li>Creation de la base de donnees MySQL et des tables</li>
@@ -233,8 +319,10 @@
                         </div>
                     </div>
 
+                    <!-- Tags des technologies utilisees -->
                     <div class="realisation-block">
                         <h4>Technologies</h4>
+                        <!-- Chaque techno est un span dans un conteneur flex (ca passe a la ligne automatiquement) -->
                         <div class="tech-tags">
                             <span class="tech-tag">Apache 2.4</span>
                             <span class="tech-tag">MySQL 8</span>
@@ -245,15 +333,20 @@
                         </div>
                     </div>
 
-                    <!-- Zone pour ajouter une capture plus tard -->
+                    <!-- Zone placeholder pour ajouter une capture d'ecran plus tard -->
+                    <!-- A remplacer par <img src="capture.png" alt="..."> quand j'aurai la capture -->
                     <div class="screenshot-placeholder">
                         <p>Capture du site EGNARO deploye (a ajouter)</p>
                     </div>
 
+                    <!-- Extrait de code avec coloration syntaxique manuelle -->
+                    <!-- J'ai pas utilise de librairie type Prism.js, je colorie avec des classes CSS -->
                     <div class="realisation-block">
                         <h4>Extrait de code - Connexion a la base de donnees</h4>
                         <div class="code-block">
+                            <!-- Barre d'en-tete qui montre le langage et le fichier -->
                             <div class="code-block-header"><span>PHP</span><span>connexion.php</span></div>
+                            <!-- pre : garde l'indentation et les retours a la ligne du code -->
                             <pre>
 <span class="code-comment">// Connexion a la BDD avec PDO</span>
 <span class="code-comment">// J'utilise PDO plutot que mysqli parce que c'est plus facile</span>
@@ -275,6 +368,7 @@
                         </div>
                     </div>
 
+                    <!-- Bloc difficulte : fond orange pour bien le differencier du reste -->
                     <div class="difficulty-block">
                         <h4>Probleme rencontre</h4>
                         <p>
@@ -290,10 +384,12 @@
                         </p>
                     </div>
 
-                    <!-- Procedure de deploiement pour la competence "Mettre a dispo" -->
+                    <!-- Procedure de deploiement -->
+                    <!-- Cette partie couvre la competence "Mettre a disposition un service" du E5 -->
                     <div class="realisation-block deploy-block">
                         <h4>Mise en production</h4>
                         <p>Voici les etapes qu'on a suivies pour mettre le site en ligne :</p>
+                        <!-- ol : liste ordonnee parce que l'ordre des etapes est important -->
                         <ol class="deploy-steps">
                             <li><strong>Preparation du serveur</strong> - Installation d'Apache, PHP et MySQL sur la machine Debian. Configuration du VirtualHost.</li>
                             <li><strong>Transfert des fichiers</strong> - Au debut avec FileZilla, puis on a mis en place un depot Git pour faciliter les mises a jour.</li>
@@ -303,6 +399,8 @@
                         </ol>
                     </div>
 
+                    <!-- Tags des competences E5 couvertes par ce projet -->
+                    <!-- active = competence validee (vert), inactive = pas couverte (gris) -->
                     <div class="competence-tags">
                         <span class="competence-tag active">Gerer le patrimoine</span>
                         <span class="competence-tag active">Repondre aux incidents</span>
@@ -314,7 +412,10 @@
                 </div>
             </article>
 
-            <!-- SITE METIERS -->
+            <!--
+                FICHE 2 : SITE METIERS
+                Meme structure que la fiche EGNARO
+            -->
             <article id="real-metiers" class="realisation-card">
                 <div class="realisation-header">
                     <h3><span>Site Metiers</span> - Les metiers apres le BTS SIO</h3>
@@ -356,6 +457,7 @@
                         <p>Capture du Site Metiers (a ajouter)</p>
                     </div>
 
+                    <!-- Extrait JS : gestion du menu burger responsive -->
                     <div class="realisation-block">
                         <h4>Extrait de code - Menu burger pour le mobile</h4>
                         <div class="code-block">
@@ -393,6 +495,7 @@ nav.<span class="code-function">querySelectorAll</span>(<span class="code-string
 
                     <div class="competence-tags">
                         <span class="competence-tag active">Gerer le patrimoine</span>
+                        <!-- inactive : ce projet ne couvre pas cette competence -->
                         <span class="competence-tag inactive">Repondre aux incidents</span>
                         <span class="competence-tag active">Presence en ligne</span>
                         <span class="competence-tag active">Travailler en projet</span>
@@ -402,7 +505,10 @@ nav.<span class="code-function">querySelectorAll</span>(<span class="code-string
                 </div>
             </article>
 
-            <!-- STAGE LEANO DESIGN -->
+            <!--
+                FICHE 3 : STAGE LEANO DESIGN (1ere annee)
+                Premier stage en entreprise
+            -->
             <article id="real-leano" class="realisation-card">
                 <div class="realisation-header">
                     <h3><span>Stage Leano Design</span> - Integration web et support</h3>
@@ -445,6 +551,7 @@ nav.<span class="code-function">querySelectorAll</span>(<span class="code-string
                         <p>Captures du site Leano Design + board Trello (a ajouter)</p>
                     </div>
 
+                    <!-- Extrait CSS : utilisation de CSS Grid pour le responsive -->
                     <div class="realisation-block">
                         <h4>Extrait de code - Grille responsive avec CSS Grid</h4>
                         <div class="code-block">
@@ -494,7 +601,10 @@ nav.<span class="code-function">querySelectorAll</span>(<span class="code-string
                 </div>
             </article>
 
-            <!-- STAGE FACTOR-I -->
+            <!--
+                FICHE 4 : STAGE FACTOR-I (2eme annee)
+                Stage plus technique, oriente back-end
+            -->
             <article id="real-factori" class="realisation-card">
                 <div class="realisation-header">
                     <h3><span>Stage Factor-I</span> - Developpement web</h3>
@@ -537,6 +647,7 @@ nav.<span class="code-function">querySelectorAll</span>(<span class="code-string
                         <p>Captures du site Factor-I (a ajouter)</p>
                     </div>
 
+                    <!-- Extrait PHP : requete preparee securisee -->
                     <div class="realisation-block">
                         <h4>Extrait de code - Requete preparee en PHP</h4>
                         <div class="code-block">
@@ -585,8 +696,13 @@ nav.<span class="code-function">querySelectorAll</span>(<span class="code-string
                 </div>
             </article>
         </section>
+        <!-- Fin de la section realisations -->
 
-        <!-- Competences techniques -->
+        <!--
+            SECTION COMPETENCES
+            Grille de cartes qui liste mes competences techniques
+            Separees en 3 categories : back-end, front-end, outils
+        -->
         <section id="competences" class="section reveal-hidden">
             <div class="card-container">
                 <div class="skills-header">
@@ -596,6 +712,7 @@ nav.<span class="code-function">querySelectorAll</span>(<span class="code-string
                     </div>
                     <p class="skills-desc">Les technos que j'ai utilisees en cours et en stage.</p>
                 </div>
+                <!-- skills-grid : grille avec auto-fit, les cartes se repartissent toutes seules -->
                 <div class="skills-grid">
                     <div class="skill-card">
                         <h3>Back-end et BDD</h3>
@@ -628,24 +745,32 @@ nav.<span class="code-function">querySelectorAll</span>(<span class="code-string
             </div>
         </section>
 
-        <!-- Certifications ANSSI -->
+        <!--
+            SECTION CERTIFICATIONS
+            Les certificats ANSSI que j'ai obtenus
+            Chaque certif est un <article> avec un lien vers le PDF du justificatif
+        -->
         <section id="certifications" class="section reveal-hidden">
             <div class="card-container">
                 <span class="badge">Certifications</span>
                 <h2>Certifications obtenues</h2>
                 <p class="section-desc">Des formations en ligne que j'ai suivies, surtout sur la securite informatique.</p>
+                <!-- certif-grid : grille responsive avec auto-fit -->
                 <div class="certif-grid">
-                    <!-- Certif 1 -->
+                    <!-- Certification 1 : SecNumAcademie -->
                     <article class="certif-card">
                         <div class="certif-visual"><div class="certif-icon">
+                            <!-- Icone document en SVG -->
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
                         </div></div>
                         <div class="certif-content">
                             <div class="certif-header"><div><h3>Sensibilisation cybersecurite</h3><p class="issuer">ANSSI / SecNumAcademie</p></div><span class="tag-success">Validee</span></div>
+                            <!-- target="_blank" : ouvre le PDF dans un nouvel onglet -->
                             <div class="certif-footer"><span>2023</span><a href="certif-secnum.pdf" target="_blank" class="link-small">Voir le justificatif</a></div>
                         </div>
                     </article>
-                    <!-- Certif 2 -->
+
+                    <!-- Certification 2 : Module 3 -->
                     <article class="certif-card">
                         <div class="certif-visual"><div class="certif-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
@@ -655,7 +780,8 @@ nav.<span class="code-function">querySelectorAll</span>(<span class="code-string
                             <div class="certif-footer"><span>2023</span><a href="certif-module3.pdf" target="_blank" class="link-small">Voir le justificatif</a></div>
                         </div>
                     </article>
-                    <!-- Certif 3 -->
+
+                    <!-- Certification 3 : Attestation ANSSI -->
                     <article class="certif-card">
                         <div class="certif-visual"><div class="certif-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
@@ -669,16 +795,23 @@ nav.<span class="code-function">querySelectorAll</span>(<span class="code-string
             </div>
         </section>
 
-        <!-- CV a telecharger -->
+        <!--
+            SECTION CV
+            Lien pour telecharger mon CV en PDF
+            Le fichier cv-aurelien-frelaut.pdf est dans le meme dossier
+        -->
         <section id="cv" class="section reveal-hidden">
             <div class="card-container">
+                <!-- cv-flex : disposition horizontale avec le texte a gauche et le bouton a droite -->
                 <div class="cv-flex">
                     <div class="cv-text">
                         <h2>Mon CV</h2>
                         <p>Mon CV au format PDF, avec le detail de mes formations et experiences.</p>
                     </div>
                     <div class="cv-action">
+                        <!-- target="_blank" ouvre le PDF dans un nouvel onglet -->
                         <a href="cv-aurelien-frelaut.pdf" target="_blank" class="btn-primary large">
+                            <!-- Icone telechargement en SVG -->
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
                             Telecharger le CV
                         </a>
@@ -687,7 +820,12 @@ nav.<span class="code-function">querySelectorAll</span>(<span class="code-string
             </div>
         </section>
 
-        <!-- Veille technologique -->
+        <!--
+            SECTION VEILLE TECHNOLOGIQUE
+            Comment je me tiens a jour sur les nouvelles technos
+            3 cartes : sources, outils, ce que j'ai appris
+            + un exemple concret d'application de la veille
+        -->
         <section id="veille" class="section reveal-hidden">
             <div class="card-container">
                 <span class="badge">Veille technologique</span>
@@ -696,7 +834,9 @@ nav.<span class="code-function">querySelectorAll</span>(<span class="code-string
                     Concretement, comment je fais pour decouvrir de nouvelles choses et rester a jour sur le dev web.
                 </p>
 
+                <!-- Grille de 3 cartes avec auto-fit -->
                 <div class="veille-grid">
+                    <!-- Carte 1 : les sources que je consulte -->
                     <div class="veille-card">
                         <h3>Ce que je consulte</h3>
                         <ul>
@@ -706,6 +846,7 @@ nav.<span class="code-function">querySelectorAll</span>(<span class="code-string
                             <li><strong>YouTube</strong> - Kevin Powell pour le CSS, Fireship pour les trucs tendance</li>
                         </ul>
                     </div>
+                    <!-- Carte 2 : les outils de veille -->
                     <div class="veille-card">
                         <h3>Outils de veille</h3>
                         <ul>
@@ -714,6 +855,7 @@ nav.<span class="code-function">querySelectorAll</span>(<span class="code-string
                             <li><strong>Dev.to</strong> - Des articles de devs, souvent assez accessibles</li>
                         </ul>
                     </div>
+                    <!-- Carte 3 : ce que ca m'a apporte concretement -->
                     <div class="veille-card">
                         <h3>Ce que j'ai appris grace a la veille</h3>
                         <ul>
@@ -724,6 +866,11 @@ nav.<span class="code-function">querySelectorAll</span>(<span class="code-string
                     </div>
                 </div>
 
+                <!--
+                    Exemple concret de veille appliquee
+                    Ca montre au jury que la veille c'est pas juste lire des articles,
+                    c'est aussi appliquer ce qu'on apprend dans ses projets
+                -->
                 <div class="veille-example">
                     <h3>Exemple concret : IntersectionObserver</h3>
                     <p>
@@ -744,8 +891,12 @@ nav.<span class="code-function">querySelectorAll</span>(<span class="code-string
         </section>
 
     </main>
+    <!-- Fin du contenu principal -->
 
-    <!-- Pied de page -->
+    <!--
+        FOOTER : pied de page avec liens et mentions
+        Comme pour le header, j'utilise la balise semantique <footer>
+    -->
     <footer>
         <div class="container footer-content">
             <div class="footer-left">
@@ -753,13 +904,15 @@ nav.<span class="code-function">querySelectorAll</span>(<span class="code-string
                 <p class="text-small">Epreuve E5 - Support et mise a disposition de services informatiques.</p>
             </div>
             <div class="footer-links">
+                <!-- target="_blank" : ouvre le lien GitHub dans un nouvel onglet -->
                 <a href="https://github.com/rnft781" target="_blank">GitHub</a>
                 <a href="mailto:afrelaut.ledantec@gmail.com">Contact</a>
             </div>
         </div>
     </footer>
 
-    <!-- Script pour les animations et la navigation -->
+    <!-- Script JS charge a la fin pour pas bloquer le chargement de la page -->
+    <!-- Si on le met dans le head, le navigateur attend de charger le JS avant d'afficher la page -->
     <script src="script.js"></script>
 </body>
 </html>
