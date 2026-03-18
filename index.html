@@ -249,6 +249,18 @@
                         <p><strong>Solution :</strong> <code>chmod 644 .htaccess</code> + activation de <code>AllowOverride All</code> dans le VirtualHost.</p>
                     </div>
 
+                    <div class="realisation-block" style="margin-top: 24px;">
+                        <h4>🚀 Mise à disposition du service</h4>
+                        <p>Procédure de déploiement suivie pour mettre le site en production :</p>
+                        <ol style="padding-left: 18px; color: var(--text-muted); font-size: 0.9rem; margin-top: 8px;">
+                            <li style="margin-bottom: 6px;"><strong>1. Préparation serveur</strong> — Installation d'Apache, PHP et MySQL sur Debian. Configuration du VirtualHost avec le nom de domaine.</li>
+                            <li style="margin-bottom: 6px;"><strong>2. Transfert des fichiers</strong> — Déploiement initial via FTP (FileZilla), puis migration vers Git pour le versioning.</li>
+                            <li style="margin-bottom: 6px;"><strong>3. Configuration BDD</strong> — Import du schéma SQL, création de l'utilisateur dédié avec droits limités.</li>
+                            <li style="margin-bottom: 6px;"><strong>4. Tests de validation</strong> — Vérification des pages, formulaires, et connexion BDD. Test de charge basique.</li>
+                            <li style="margin-bottom: 6px;"><strong>5. Documentation</strong> — Rédaction d'un guide d'installation pour permettre la maintenance par un tiers.</li>
+                        </ol>
+                    </div>
+
                     <div class="competence-tags">
                         <span class="competence-tag active">✓ Gérer le patrimoine</span>
                         <span class="competence-tag active">✓ Répondre aux incidents</span>
@@ -635,7 +647,7 @@ burger.<span class="code-function">addEventListener</span>(<span class="code-str
                 <p class="text-small">Épreuve E5 — Support et mise à disposition de services informatiques.</p>
             </div>
             <div class="footer-links">
-                <a href="https://github.com/rnf781" target="_blank">GitHub</a>
+                <a href="https://github.com/rnft781" target="_blank">GitHub</a>
                 <a href="mailto:afrelaut.ledantec@gmail.com">Contact</a>
             </div>
         </div>
