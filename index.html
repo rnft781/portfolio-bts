@@ -179,8 +179,8 @@
                     <div class="timeline-item">
                         <span class="timeline-year">2024-2025</span>
                         <h3>Premiers projets concrets</h3>
-                        <p>Projet EGNARO (hebergement web), Site Metiers, et pas mal de TP en cours. J'ai commence a
-                            utiliser GitHub et Trello.</p>
+                        <p>Projet EGNARO (hebergement web), Site Metiers sur les debouches apres le BTS SIO, TP en
+                            cours et premiers exercices PHP. J'ai commence a utiliser GitHub et Trello.</p>
                     </div>
                     <div class="timeline-item">
                         <span class="timeline-year">Mai-Juin 2025</span>
@@ -189,10 +189,22 @@
                             l'integration responsive.</p>
                     </div>
                     <div class="timeline-item">
+                        <span class="timeline-year">Sept. 2025 - Jan. 2026</span>
+                        <h3>Course aux Salles</h3>
+                        <p>Projet mobile en equipe avec .NET MAUI et Symfony. J'etais charge de la partie
+                            professeur/admin, avec gestion des tournois, QR codes et suivi en temps reel.</p>
+                    </div>
+                    <div class="timeline-item">
                         <span class="timeline-year">Jan-Fev 2026</span>
                         <h3>Stage chez Factor-I</h3>
                         <p>Deuxieme stage, plus oriente back-end. J'ai touche au PHP cote serveur et aux bases de
                             donnees en conditions reelles.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-year">Jan. - Mai 2026</span>
+                        <h3>Projet Encheres</h3>
+                        <p>Projet Symfony et Vue.js avec API REST, authentification par token et gestion des encheres.
+                            J'etais charge du backend et de la logique metier.</p>
                     </div>
                 </div>
             </div>
@@ -259,12 +271,33 @@
                                 <td class="check">X</td>
                             </tr>
                             <tr>
-                                <td><a href="#real-metiers"><strong>SITE Metiers</strong></a><br><em>Apres le BTS
-                                        SIO</em></td>
+                                <td><a href="#real-sitemetiers"><strong>Site Metiers</strong></a><br><em>Les metiers
+                                        apres le BTS SIO</em></td>
                                 <td>11/2024 - 01/2025</td>
-                                <!-- td vide = competence pas couverte par ce projet -->
                                 <td class="check">X</td>
                                 <td class="check"></td>
+                                <td class="check">X</td>
+                                <td class="check">X</td>
+                                <td class="check">X</td>
+                                <td class="check">X</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#real-encheres"><strong>Projet Encheres</strong></a><br><em>Plateforme
+                                        d'encheres Symfony + Vue.js</em></td>
+                                <td>01/2026 - 05/2026</td>
+                                <td class="check">X</td>
+                                <td class="check">X</td>
+                                <td class="check">X</td>
+                                <td class="check">X</td>
+                                <td class="check">X</td>
+                                <td class="check">X</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#real-coursesalles"><strong>Course aux Salles</strong></a><br><em>App
+                                        mobile .NET MAUI + Symfony</em></td>
+                                <td>09/2025 - 01/2026</td>
+                                <td class="check">X</td>
+                                <td class="check">X</td>
                                 <td class="check">X</td>
                                 <td class="check">X</td>
                                 <td class="check">X</td>
@@ -363,6 +396,8 @@
                                 <li>Installation et configuration d'Apache sur Debian</li>
                                 <li>Creation de la base de donnees MySQL et des tables</li>
                                 <li>D'abord transfert par FTP, puis on est passe sur Git</li>
+                                <li>Mise en place des sauvegardes automatiques de la base de donnees avec
+                                    <code>mysqldump</code> (script cron quotidien)</li>
                                 <li>J'ai aussi redige la doc d'installation pour que d'autres puissent refaire la manip
                                 </li>
                             </ul>
@@ -436,9 +471,9 @@
 
             <!--
                 FICHE 2 : SITE METIERS
-                Meme structure que la fiche EGNARO
+                Projet scolaire en HTML/CSS/JavaScript
             -->
-            <article id="real-metiers" class="realisation-card">
+            <article id="real-sitemetiers" class="realisation-card">
                 <div class="realisation-header">
                     <h3><span>Site Metiers</span> - Les metiers apres le BTS SIO</h3>
                     <span class="realisation-period">Nov. 2024 - Jan. 2025</span>
@@ -449,8 +484,8 @@
                             <h4>Contexte</h4>
                             <p>
                                 Un projet scolaire ou il fallait creer un site qui presente les differents metiers
-                                qu'on peut faire apres le BTS SIO. C'etait l'occasion de pratiquer le HTML/CSS/JS
-                                sur un vrai projet avec un sujet concret.
+                                qu'on peut faire apres le BTS SIO. C'etait l'occasion de pratiquer le HTML,
+                                CSS et JavaScript sur un vrai projet avec un sujet concret.
                             </p>
                         </div>
                         <div class="realisation-block">
@@ -458,7 +493,8 @@
                             <ul>
                                 <li>J'ai fait la maquette et choisi les couleurs</li>
                                 <li>Tout le code HTML/CSS/JavaScript</li>
-                                <li>J'ai fait en sorte que ce soit responsive (ca marchait sur telephone)</li>
+                                <li>J'ai fait en sorte que ce soit responsive sur telephone</li>
+                                <li>Ajout des balises meta SEO (<code>description</code>, <code>og:title</code>)</li>
                                 <li>Recherche d'infos sur les metiers et mise en page du contenu</li>
                             </ul>
                         </div>
@@ -475,21 +511,21 @@
                         </div>
                     </div>
 
-
-
                     <div class="difficulty-block">
                         <h4>Probleme rencontre</h4>
                         <p>
-                            Le menu burger marchait bien pour ouvrir/fermer, mais quand on cliquait sur un
-                            lien du menu en version mobile, le menu restait ouvert. Ca faisait bizarre.
-                            J'ai resolu ca en ajoutant un addEventListener sur chaque lien pour retirer
-                            la classe <code>active</code> au clic.
+                            Le menu burger marchait bien pour ouvrir et fermer, mais quand on cliquait sur un lien
+                            du menu en version mobile, le menu restait ouvert. Ca faisait bizarre.
+                        </p>
+                        <p>
+                            <strong>Ce que j'ai fait :</strong> j'ai resolu ca en ajoutant un
+                            <code>addEventListener</code> sur chaque lien pour retirer la classe
+                            <code>active</code> au clic.
                         </p>
                     </div>
 
                     <div class="competence-tags">
                         <span class="competence-tag active">Gerer le patrimoine</span>
-                        <!-- inactive : ce projet ne couvre pas cette competence -->
                         <span class="competence-tag inactive">Repondre aux incidents</span>
                         <span class="competence-tag active">Presence en ligne</span>
                         <span class="competence-tag active">Travailler en projet</span>
@@ -572,7 +608,7 @@
             </article>
 
             <!--
-                FICHE 4 : STAGE FACTOR-I (2eme annee)
+                FICHE 3 : STAGE FACTOR-I (2eme annee)
                 Stage plus technique, oriente back-end
             -->
             <article id="real-factori" class="realisation-card">
@@ -629,6 +665,183 @@
                             dans le fichier PHP de l'API. C'est pas complique quand on sait ce qu'il faut faire,
                             mais il m'a fallu un moment pour comprendre le probleme.
                         </p>
+                    </div>
+
+                    <div class="competence-tags">
+                        <span class="competence-tag active">Gerer le patrimoine</span>
+                        <span class="competence-tag active">Repondre aux incidents</span>
+                        <span class="competence-tag active">Presence en ligne</span>
+                        <span class="competence-tag active">Travailler en projet</span>
+                        <span class="competence-tag active">Mettre a dispo</span>
+                        <span class="competence-tag active">Dev. professionnel</span>
+                    </div>
+                </div>
+            </article>
+            <!--
+                FICHE 4 : COURSE AUX SALLES
+                Projet scolaire en equipe de 4 : jeu mobile multi-plateforme
+                App .NET MAUI + API Symfony 7, methode agile (4 sprints)
+            -->
+            <article id="real-coursesalles" class="realisation-card">
+                <div class="realisation-header">
+                    <h3><span>Course aux Salles</span> - Application mobile jeu de piste en lycee</h3>
+                    <span class="realisation-period">Sept. 2025 - Jan. 2026</span>
+                </div>
+                <div class="realisation-body">
+                    <div class="realisation-grid">
+                        <div class="realisation-block">
+                            <h4>Contexte</h4>
+                            <p>
+                                Projet scolaire en equipe de 4, realise en methode agile (4 sprints de 2 semaines).
+                                L'objectif etait de creer un jeu mobile multi-plateforme (Android/iOS) pour le lycee :
+                                des classes s'affrontent dans des epreuves geolocalises via QR/NFC, avec elimination
+                                progressive. J'etais charge de la <strong>partie professeur/admin</strong> : a la fois
+                                le back-end Symfony et l'interface web d'administration.
+                            </p>
+                        </div>
+                        <div class="realisation-block">
+                            <h4>Ce que j'ai fait</h4>
+                            <ul>
+                                <li>Developpement de l'interface web admin (Symfony 7 + EasyAdmin) pour les professeurs</li>
+                                <li>Creation et gestion des tournois, manches, zones et QR codes depuis l'admin</li>
+                                <li>Suivi en direct des scores et eliminations via WebSockets (Mercure)</li>
+                                <li>Commandes admin : Pause / Reprise / Ajustement du chrono en live</li>
+                                <li>Generation et export du rapport PDF final pour l'equipe pedagogique</li>
+                                <li>Participation aux ceremonies agiles : daily Discord, retrospectives de sprint</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="realisation-block">
+                        <h4>Technologies</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Symfony 7</span>
+                            <span class="tech-tag">API Platform</span>
+                            <span class="tech-tag">Mercure (WebSocket)</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">.NET MAUI</span>
+                            <span class="tech-tag">GitHub Actions</span>
+                            <span class="tech-tag">Trello</span>
+                            <span class="tech-tag">Postman</span>
+                        </div>
+                    </div>
+
+                    <div class="difficulty-block">
+                        <h4>Probleme rencontre</h4>
+                        <p>
+                            La synchronisation du chronometre entre le serveur et les clients mobiles etait
+                            difficile : chaque telephone avait une heure legrement differente, ce qui causait
+                            des decalages visibles sur l'ecran de compte a rebours.
+                        </p>
+                        <p>
+                            <strong>Ce que j'ai fait :</strong> j'ai fait du serveur l'autorite de temps
+                            unique. A chaque connexion, le client recoit l'heure serveur et calcule un delta.
+                            Toutes les 10 secondes, le client se re-synchronise via Mercure pour corriger la
+                            derive. Le decalage est tombe sous 200ms, imperceptible pour les joueurs.
+                        </p>
+                    </div>
+
+                    <div class="realisation-block deploy-block">
+                        <h4>Organisation du projet (methode agile)</h4>
+                        <ol class="deploy-steps">
+                            <li><strong>Sprint 1</strong> - Setup API Symfony, auth, connexion classe, scan QR
+                                simple, compte a rebours lobby.</li>
+                            <li><strong>Sprint 2</strong> - Enigmes (2 types), validation NFC, chrono epreuve
+                                avec fin automatique.</li>
+                            <li><strong>Sprint 3</strong> - Mini-jeux, elimination joueurs, panneau admin web
+                                (EasyAdmin), scoreboard temps reel.</li>
+                            <li><strong>Sprint 4</strong> - Tests de charge, securite, deploiement APK, rapport
+                                PDF final.</li>
+                        </ol>
+                    </div>
+
+                    <div class="competence-tags">
+                        <span class="competence-tag active">Gerer le patrimoine</span>
+                        <span class="competence-tag active">Repondre aux incidents</span>
+                        <span class="competence-tag active">Presence en ligne</span>
+                        <span class="competence-tag active">Travailler en projet</span>
+                        <span class="competence-tag active">Mettre a dispo</span>
+                        <span class="competence-tag active">Dev. professionnel</span>
+                    </div>
+                </div>
+            </article>
+
+            <!--
+                FICHE 5 : PROJET ENCHERES
+                Projet scolaire de 2eme annee : plateforme d'encheres en Symfony + Vue.js
+                Architecture API REST + frontend SPA avec token Bearer
+            -->
+            <article id="real-encheres" class="realisation-card">
+                <div class="realisation-header">
+                    <h3><span>Projet Encheres</span> - Plateforme d'encheres Symfony + Vue.js</h3>
+                    <span class="realisation-period">Jan. - Mai 2026</span>
+                </div>
+                <div class="realisation-body">
+                    <div class="realisation-grid">
+                        <div class="realisation-block">
+                            <h4>Contexte</h4>
+                            <p>
+                                Projet scolaire realise en equipe de 2 sur 7 semaines (140h). L'objectif etait
+                                de concevoir une plateforme d'encheres complete avec une architecture separee :
+                                un backend API Symfony et un frontend Vue.js communiquant via Fetch.
+                                J'etais charge de la partie backend (API REST, authentification, logique metier).
+                            </p>
+                        </div>
+                        <div class="realisation-block">
+                            <h4>Ce que j'ai fait</h4>
+                            <ul>
+                                <li>Conception du MCD et des entites Doctrine (User, Auction, Bid, Transaction)</li>
+                                <li>Mise en place de l'authentification par token Bearer maison</li>
+                                <li>Developpement des routes API REST (register, login, CRUD encheres, enchérir)</li>
+                                <li>Gestion des regles metier : validation des encheres, clôture automatique</li>
+                                <li>Creation d'une commande Symfony pour detecter et cloturer les encheres terminees</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="realisation-block">
+                        <h4>Technologies</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Symfony 7</span>
+                            <span class="tech-tag">PHP 8</span>
+                            <span class="tech-tag">Doctrine ORM</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Vue.js 3</span>
+                            <span class="tech-tag">Fetch API</span>
+                            <span class="tech-tag">Git</span>
+                        </div>
+                    </div>
+
+                    <div class="difficulty-block">
+                        <h4>Probleme rencontre</h4>
+                        <p>
+                            Quand deux utilisateurs enchérissaient en meme temps, il pouvait arriver que
+                            le prix courant soit lu en meme temps par les deux, et les deux encheres soient
+                            acceptees alors que l'une devait etre refusee.
+                        </p>
+                        <p>
+                            <strong>Ce que j'ai fait :</strong> j'ai utilise une transaction de base de
+                            donnees avec verrouillage de ligne (<code>SELECT ... FOR UPDATE</code>) dans
+                            le <code>BidService</code>. Si le prix avait change entre la lecture et
+                            l'ecriture, l'API renvoyait une erreur <code>409 Conflict</code> pour indiquer
+                            que l'enchere n'etait plus valide.
+                        </p>
+                    </div>
+
+                    <div class="realisation-block deploy-block">
+                        <h4>Architecture et deploiement</h4>
+                        <p>L'application suit une architecture client/serveur stricte :</p>
+                        <ol class="deploy-steps">
+                            <li><strong>Backend Symfony</strong> - API REST stateless, aucune session. Chaque
+                                requete est authentifiee via le header <code>Authorization: Bearer TOKEN</code>.</li>
+                            <li><strong>Token maison</strong> - Genere avec <code>bin2hex(random_bytes(32))</code>
+                                au login, stocke en base, verifie par un <code>ApiTokenAuthenticator</code>.</li>
+                            <li><strong>Frontend Vue.js</strong> - SPA avec Vue Router, le token est stocke
+                                en localStorage et envoye dans chaque requete Fetch.</li>
+                            <li><strong>Clôture automatique</strong> - Commande Symfony <code>CloseAuctionsCommand</code>
+                                qui detecte les encheres dont la <code>end_date</code> est depassee, determine
+                                le gagnant et cree une Transaction.</li>
+                        </ol>
                     </div>
 
                     <div class="competence-tags">
@@ -876,6 +1089,20 @@
                     c'est aussi appliquer ce qu'on apprend dans ses projets
                 -->
                 <div class="veille-example">
+                    <h3>Mon projet professionnel</h3>
+                    <p>
+                        Apres le BTS, je souhaite poursuivre en <strong>Licence Informatique a Paris</strong>
+                        (Universite Paris-Sorbonne ou equivalent). L'objectif est d'approfondir mes bases en
+                        algorithmique, architecture logicielle et developpement web avance, pour a terme travailler
+                        comme developpeur full-stack.
+                    </p>
+                    <p>
+                        Mon profil LinkedIn regroupe mes experiences et projets :
+                        <a href="https://www.linkedin.com/in/aur%C3%A9lien-fr%C3%A9laut-a69160328" target="_blank" class="link">linkedin.com/in/aurelien-frelaut</a>
+                    </p>
+                </div>
+
+                <div class="veille-example">
                     <h3>Exemple concret : IntersectionObserver</h3>
                     <p>
                         En cherchant comment animer des elements au scroll, je suis tombe sur l'API
@@ -908,8 +1135,8 @@
                 <p class="text-small">Epreuve E5 - Support et mise a disposition de services informatiques.</p>
             </div>
             <div class="footer-links">
-                <!-- target="_blank" : ouvre le lien GitHub dans un nouvel onglet -->
                 <a href="https://github.com/rnft781" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/aur%C3%A9lien-fr%C3%A9laut-a69160328" target="_blank">LinkedIn</a>
                 <a href="mailto:afrelaut.ledantec@gmail.com">Contact</a>
             </div>
         </div>
